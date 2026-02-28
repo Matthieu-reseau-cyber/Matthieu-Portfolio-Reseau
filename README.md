@@ -75,8 +75,8 @@ En formation **TP Technicien Réseaux IP (RNCP35295)**, je construis ce portfoli
 
 ## 📬 Contact
 
-- 📧 matthieu.morel80@gmail.com
-- 💼 [LinkedIn](#)
+- 📧 matthieu.morel068@gmail.com
+- 💼 https://www.linkedin.com/in/matthieu-morel-4313422a8
 - 📍 Colmar (68) — Mobile région PACA / Marseille
 
 ---
