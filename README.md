@@ -8,7 +8,7 @@
 ![MAJ](https://img.shields.io/badge/Mise%20à%20jour-Avril%202026-lightgrey)
 > 🚧 **Portfolio en cours d'élaboration** — Les comptes rendus de labs sont ajoutés progressivement au fil de la formation (septembre 2025 → mars 2027).
 > Les dossiers sont créés en avance, les CR arrivent au fur et à mesure des modules complétés.
-> **Dernière mise à jour : avril 2026.**
+> **Dernière mise à jour : mai 2026.**
 ---
 🎯 Profil professionnel
 Technicien réseau en reconversion professionnelle, en formation intensive au Centre de Réadaptation de Mulhouse (CRM) — 18 mois, sept. 2025 → mars 2027.
