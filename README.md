@@ -102,8 +102,8 @@ TRI RNCP35295 (en cours)
 
 | Exercice | Difficulté | Score | TP | FP | Lien |
 |---|---|---|---|---|---|
-| phishing-facile-01 | 🟢 Facile | 160/160 🥇 | 100% | 100% | [→](./TryHackMe/Simulations-SOC/phishing-facile-01/) |
-| phishing-medium-02 | 🟠 Moyen | 1695 pts | 100% | 58% | [→](./TryHackMe/Simulations-SOC/phishing-medium-02/) |
+| phishing-facile-01 | 🟢 Facile | 160/160 pts 🥇 | 100% | 100% | [→](./TryHackMe/Simulations-SOC/phishing-facile-01/) |
+| phishing-medium-02 | 🟠 Moyen | 1695/1880 pts | 100% | 58% | [→](./TryHackMe/Simulations-SOC/phishing-medium-02/) |
 
 ### Challenges
 
