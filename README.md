@@ -59,8 +59,8 @@ TRI RNCP35295 (en cours)
 │
 ├── 📁 TryHackMe/                     ← Parcours SOC Level 1
 │   ├── 📁 Simulations-SOC/
-│   │   ├── phishing-facile-01/       ← Score 160/160 🥇 1er
-│   │   └── phishing-medium-02/       ← Score 1695 pts — 36 alertes
+│   │   ├── phishing-facile-01/       ← Score 160/160 pts 🥇 1er
+│   │   └── phishing-medium-02/       ← Score 1695/1180 pts — 36 alertes
 │   └── 📁 Challenges/
 │       ├── pyramid-of-pain/          ← 180 pts — MITRE ATT&CK
 │       ├── phish-de-greenholt/       ← 360 pts 🥇 Badge Phish Hunter
