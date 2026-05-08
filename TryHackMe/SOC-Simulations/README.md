@@ -26,7 +26,7 @@ SOC-Simulations/
 | Simulation | Niveau | Score | Classement | Date |
 |---|---|---|---|---|
 | [Phishing Easy #01](./phishing-easy-01/README.md) | 🟢 Facile | 160/160 pts | 🥇 1er | 01/05/2026 |
-
+| [Phishing_Se_Dévoile](./phishing-medium-01/README.md) | 🟠 Moyen | 1695/1880 | 🥈 2ème | 08/05/2026 |
 ---
 
 ## 🎯 Compétences développées
@@ -37,7 +37,11 @@ SOC-Simulations/
 - Décision d'escalade L1 → L2
 - Analyse des logs firewall et corrélation d'événements
 - Auto-évaluation et amélioration continue sur retour IA
-
+Reconnaissance de chaînes d'attaque complexes (phishing → AD recon → exfiltration DNS)
+- Analyse de DNS tunneling et détection d'exfiltration de données
+- Identification d'outils offensifs (PowerView, Robocopy staging)
+- Corrélation d'alertes multi-événements via PID parent
+- 
 ---
 
 *Simulations réalisées dans le cadre du parcours **SAL1 — SOC Level 1** de TryHackMe.*
