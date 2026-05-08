@@ -51,8 +51,7 @@ TRI RNCP35295 (en cours)
 ├── 📁 Anki-Decks/                    ← Decks CCST/CCNA (3000+ cartes)
 │
 ├── 📁 CR-Labs/
-│   ├── 📁 Formip/
-│   │   ├── Materiel/                 ← Matériel réseau, câblage, composants ✅
+│   ├── 📁 Formip
 │   │   ├── Reseau-Revolution/        ← OSI, IPv4, DHCP, DNS, IPv6, TCP/IP ✅
 │   │   ├── Switching-Saga/           ← VLAN, STP, EtherChannel, SSH ✅
 │   │   └── Routage-Renaissance/      ← Routage statique, OSPF, FHRP, HSRP ✅
