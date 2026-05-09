@@ -54,9 +54,7 @@ La **canne blanche électronique** enrichit ces fonctions avec une détection ac
 
 Schéma réalisé sur **Tinkercad** :
 
-![Schéma Arduino](./Canne_blanche_schéma.webp)
-
-🔗 [Voir le schéma Tinkercad interactif](https://www.tinkercad.com/things/eVnVbN7L00f-projet-canne)
+🔗 [Voir le schéma Tinkercad](https://www.tinkercad.com/things/eVnVbN7L00f-projet-canne)
 
 **Câblage :**
 ```
